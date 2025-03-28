@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-// Superclasse ContaBancaria
+
 class ContaBancaria {
     protected String titular;
     protected int numeroConta;
@@ -12,7 +12,6 @@ class ContaBancaria {
         this.saldo = 0.0;
     }
 
-    // Getters e Setters
     public String getTitular() {
         return titular;
     }
@@ -34,7 +33,7 @@ class ContaBancaria {
         System.out.println("Depósito de R$" + valor + " realizado.");
     }
 
-    // Sobrecarga do método depositar
+    
     public void depositar(double valor, String origem) {
         saldo += valor;
         System.out.println("Depósito de R$" + valor + " realizado via " + origem);
@@ -51,7 +50,7 @@ class ContaBancaria {
     }
 }
 
-// Subclasse ContaCorrente
+
 class ContaCorrente extends ContaBancaria {
     private double limiteChequeEspecial = 500.0;
 
@@ -71,14 +70,14 @@ class ContaCorrente extends ContaBancaria {
     }
 }
 
-// Subclasse ContaPoupanca
+
 class ContaPoupanca extends ContaBancaria {
     public ContaPoupanca(String titular, int numeroConta) {
         super(titular, numeroConta);
     }
 }
 
-// Classe Banco para gerenciar contas
+
 class Banco {
     private ArrayList<ContaBancaria> contas = new ArrayList<>();
 
